@@ -1498,6 +1498,7 @@ class Accelerator:
             "gradient_clipping": 1.0,
             "zero_optimization.stage3_gather_16bit_weights_on_model_save": False,
         }
+        print("DEEPSPEED GRADIENT", deepspeed_plugin.deepspeed_config["gradient_accumulation_steps"])
 
         model = None
         optimizer = None
