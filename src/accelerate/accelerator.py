@@ -259,6 +259,11 @@ class Accelerator:
         kwargs_handlers: list[KwargsHandler] | None = None,
         dynamo_backend: DynamoBackend | str | None = None,
     ):
+        print("self.steps", gradient_accumulation_steps)
+        print("is deepspeed?", deepspeed_plugin is not None)
+        if deepspeed_plugin is not None:
+            print("deepspeed config", deepspeed_plugin.deepspeed_config)
+
         if project_config is not None:
             self.project_configuration = project_config
         else:
